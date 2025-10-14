@@ -7,19 +7,12 @@
 </head>
 <body>
     <h1>Daftar Penulis</h1>
-        <table border = "1" cellpadding="8">
-            <tr>
-                <th>ID</th>
-                <th>Nama Penulis</th>
-                <th>Biografi</th>
-            </tr>
+    <p>Selamat datang di Book Authors!</p>
         @foreach($authors as $author)
-            <tr>
-                <td>{{ $author['id'] }}</td>
-                <td>{{ $author['name'] }}</td>
-                <td>{{ $author['bio'] }}</td>
-            </tr>
+        <ul>
+            <li>{{ $author['name'] }}</li>
+            <li>{{ $author['bio'] }}</li>
+        </ul>
         @endforeach
-        </table>
 </body>
 </html>
