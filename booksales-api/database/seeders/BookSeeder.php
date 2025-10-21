@@ -17,7 +17,7 @@ class BookSeeder extends Seeder
             'title' => 'Pulang',
             'description' => 'Petualangan seorang pemuda yang kembali ke desa kelahirannya.',
             'price' => 40000,
-            'stock' => 15,
+            'stock' => 50,
             'cover_photo' => 'pulang.jpg',
             'genre_id' => 1,
             'author_id' => 1

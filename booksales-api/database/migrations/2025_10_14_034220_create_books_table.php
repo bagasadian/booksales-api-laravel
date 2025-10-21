@@ -18,12 +18,9 @@ return new class extends Migration
             $table->integer('price');
             $table->integer('stock');
             $table->string('cover_photo')->nullable();
-            $table->unsignedBigInteger('genre_id')->nullable();
-            $table->unsignedBigInteger('author_id')->nullable();
+            $table->foreignId('genre_id')->constrained('genres')->onDelete('cascade');
+            $table->foreignId('author_id')->constrained('authors')->onDelete('cascade');
             $table->timestamps();
-
-            $table->foreign('genre_id')->references('id')->on('genres')->onDelete('set null');
-            $table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade');
         });
     }
 
