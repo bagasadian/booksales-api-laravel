@@ -88,4 +88,39 @@ class TransactionController extends Controller
             "data" => $transaction
         ], 201);
     }
+
+    public function show(string $id){
+        $transaction = Transaction::find($id);
+
+        if (!$transaction) {
+            return response()->json([
+                "success" => false,
+                "message" => "Resource not found",
+            ], 404);
+        }
+
+        return response()->json([
+            "success" => true,
+            "message" => "Get Resource Detail",
+            "data" => $transaction
+        ], 200);
+    }
+
+    public function destroy(string $id){
+        $transaction = Transaction::find($id);
+
+        if (!$transaction) {
+            return response()->json([
+                "success" => false,
+                "message" => "Resource not found",
+            ], 404);
+        }
+
+        $transaction->delete();
+
+        return response()->json([
+            "success" => true,
+            "message" => "Resource deleted successfully",
+        ], 200);
+    }
 }
